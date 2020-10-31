@@ -73,7 +73,7 @@ router.beforeEach((to, from, next) => {
     .reverse()
     .find((record) => record.meta && record.meta.title);
 
-  document.title = `🃏 ModCom2019 ${customTitle ? `- ${customTitle.meta.title} ` : ""}🎲`;
+  document.title = `${customTitle ? `- ${customTitle.meta.title} ` : ": BE-U"}`;
 
   next();
 
