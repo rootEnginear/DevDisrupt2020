@@ -58,6 +58,14 @@ const routes = [
     },
   },
   {
+    path: "/startvideo",
+    name: "startvideo",
+    component: loadView("StartVideo"),
+    meta: {
+      title: "...",
+    },
+  },
+  {
     path: "/mentors",
     name: "Mentors",
     component: loadView("Mentors"),
@@ -116,6 +124,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
+
 
 // Smooth Scroll
 import vueSmoothScroll from "vue2-smooth-scroll";
