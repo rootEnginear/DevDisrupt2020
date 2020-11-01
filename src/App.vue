@@ -26,6 +26,12 @@ export default {
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
 
+html {
+  transition: background 0.5s;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
 body {
   letter-spacing: 0.2px;
 }
@@ -76,5 +82,9 @@ body {
 .routerview-leave-to,
 .routerview-enter {
   opacity: 0;
+}
+
+.animation-content.modal-content {
+  overflow: unset;
 }
 </style>

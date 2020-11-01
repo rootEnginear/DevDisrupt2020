@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" style="margin: 0; max-width: 100%; padding: 0 5%">
     <section class="hero is-fullheight-with-navbar">
       <div class="hero-body is-justify-content-center">
         <transition
@@ -57,9 +57,9 @@
             </div>
             <hr class="my-3" />
             <div class="has-text-right">
-              <b-button size="is-small"
-                >ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน</b-button
-              >
+              <router-link class="button is-small" to="/mentors">
+                ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน
+              </router-link>
             </div>
           </div>
           <div
@@ -88,7 +88,7 @@
             </div>
 
             <div class="button-group is-flex">
-              <div class="button mr-3">
+              <div class="button mr-3" @click="gotomentor()">
                 <img
                   src="@/assets/q03.svg"
                   alt="ฉันพอจะรู้อยู่แล้ว"
@@ -113,9 +113,9 @@
             </div>
             <hr class="my-3" />
             <div class="has-text-right">
-              <b-button size="is-small"
-                >ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน</b-button
-              >
+              <router-link class="button is-small" to="/mentors">
+                ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน
+              </router-link>
             </div>
           </div>
           <div
@@ -139,21 +139,27 @@
               </div>
             </div>
             <b-field>
-              <b-input v-model.trim="filter" placeholder="ค้นหา..."></b-input>
+              <b-input
+                type="search"
+                icon="search"
+                v-model.trim="filter"
+                placeholder="ค้นหา..."
+              ></b-input>
             </b-field>
             <section class="job_btns">
               <b-button
                 expanded
                 v-for="(job, index) in filtered_job"
                 :key="index"
+                @click="gotomentor()"
                 >{{ job }}</b-button
               >
             </section>
             <hr class="my-3" />
             <div class="has-text-right">
-              <b-button size="is-small"
-                >ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน</b-button
-              >
+              <router-link class="button is-small" to="/mentors">
+                ข้ามขั้นตอนนี้ ฉันขอดูเมนเทอร์ทุกคน
+              </router-link>
             </div>
           </div>
         </transition>
@@ -163,8 +169,17 @@
 </template>
 
 <script>
+import bg from "@/assets/bg.png";
+import blank from "@/assets/blank.png";
+
 export default {
   name: "GettingStarted",
+  beforeCreate() {
+    document.getElementsByTagName("html")[0].style.background = `url(${bg})`;
+  },
+  beforeDestroy() {
+    document.getElementsByTagName("html")[0].style.background = `url(${blank})`;
+  },
   data() {
     return {
       filter_step: 0,
@@ -214,6 +229,7 @@ export default {
         "นักบำบัด",
         "นักสังคมวิเคราะห์",
         "นักวิจัย",
+        "ครู",
       ],
       filter: "",
     };
@@ -222,6 +238,11 @@ export default {
     filtered_job() {
       if (this.filter === "") return this.job_data;
       return this.job_data.filter((j) => j.includes(this.filter));
+    },
+  },
+  methods: {
+    gotomentor() {
+      this.$router.push("mentors");
     },
   },
 };
