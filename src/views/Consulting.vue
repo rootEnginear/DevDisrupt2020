@@ -41,7 +41,7 @@
           :class="{ 'is-active': isActive.bold() }"
           @click="commands.bold"
         >
-          bold
+          <i class="fas fa-bold"></i>
         </button>
 
         <button
@@ -49,7 +49,7 @@
           :class="{ 'is-active': isActive.italic() }"
           @click="commands.italic"
         >
-          italic
+          <i class="fas fa-italic"></i>
         </button>
 
         <button
@@ -57,7 +57,7 @@
           :class="{ 'is-active': isActive.strike() }"
           @click="commands.strike"
         >
-          strike
+          <i class="fas fa-strikethrough"></i>
         </button>
 
         <button
@@ -65,21 +65,21 @@
           :class="{ 'is-active': isActive.underline() }"
           @click="commands.underline"
         >
-          underline
+          <i class="fas fa-underline"></i>
         </button>
 
         <button
           class="menubar__button"
           @click="commands.undo"
         >
-          undo
+          <i class="fas fa-undo"></i>
         </button>
 
         <button
           class="menubar__button"
           @click="commands.redo"
         >
-          redo
+          <i class="fas fa-redo"></i>
         </button>
 
       </div>
@@ -280,5 +280,23 @@ export default {
 
 #videos {
   position: relative;
+}
+
+.menubar__button {
+  padding: 8px;
+  border: 0;
+  background-color: rgb(131, 131, 131);
+  margin-right: 6px;
+  margin-bottom: 10px;
+}
+
+.editor {
+  width: 100%;
+}
+
+.editor__content {
+  min-height: 4rem;
+  background-color: rgb(235, 235, 235);
+  margin-bottom: 20px;
 }
 </style>
