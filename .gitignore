@@ -30,3 +30,5 @@ pnpm-debug.log*
 ### Firebase Patch ###
 .runtimeconfig.json
 .firebase/
+
+/local

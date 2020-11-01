@@ -5,17 +5,17 @@ $primary-invert: findColorInvert($primary);
 $primary-light: findLightColor($primary);
 $primary-dark: findDarkColor($primary);
 
-$link: #e76f7c;
-$link-invert: findColorInvert($link);
-$link-light: findLightColor($link);
-$link-dark: findDarkColor($link);
-$link-visited: #b95963;
-$link-hover: #fe7b89;
-$link-hover-border: $link-hover;
-$link-focus: $link-hover;
-$link-focus-border: $link-hover;
-$link-active: $link-visited;
-$link-active-border: $link-visited;
+$link: $primary;
+// $link-invert: findColorInvert($link);
+// $link-light: findLightColor($link);
+// $link-dark: findDarkColor($link);
+// $link-visited: $primary-dark;
+// $link-hover: $primary-light;
+// $link-hover-border: $link-hover;
+// $link-focus: $link-hover;
+// $link-focus-border: $link-hover;
+// $link-active: $link-visited;
+// $link-active-border: $link-visited;
 
 // 3.0 #5899ca
 // 4.5 #6675a7
@@ -68,8 +68,8 @@ $colors: (
   ),
 );
 
-$family-primary: "CS PraJad", BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto",
-  "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+$family-primary: "Ubuntu", "Sarabun", BlinkMacSystemFont, -apple-system, "Segoe UI",
+  "Roboto", "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   "Helvetica", "Arial", sans-serif;
 $body-line-height: 1.7;
 $body-size: 17px;
